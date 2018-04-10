@@ -4,11 +4,11 @@ def quicksort(l):
 	pivot = [l[0]]
 	less = []
 	greater = []
-	for num in range(1, len(l)):
-		if l[num] < pivot[0]:
-			less.append(l[num])
-		elif l[num] > pivot[0]:
-			greater.append(l[num])
+	for num in l[1:]:
+		if num < pivot[0]:
+			less.append(num)
+		elif num > pivot[0]:
+			greater.append(num)
 		else:
-			pivot.append(l[num])
+			pivot.append(num)
 	return(quicksort(less) + pivot + quicksort(greater))
